@@ -7,7 +7,10 @@
 ### Description
 
 This week's code review project is a website where a user can fill out a form with contact information, and once it is submitted it will be added to their address book.
+
+```shell
 ![Alt text](web/images/screenshot.jpg)
+```
 
 ### Known Bugs
 

@@ -30,5 +30,16 @@
         </div>
 
         <h1>Here is a list of your existing contacts:</h1>
+        {% if contacts is not empty %}
+            {% for contact in contacts %}
+                {{ contact.getName }}
+                <img src="{{ contact.getPhoto}}" alt="contact photo"/>
+                <ul>
+                    <li>{{ contact.getPhone }}</li>
+                    <li>{{ contact.getAddress }}</li>
+                    <li>{{ contact.getEmail }}</li>
+                </ul>
+            {% endfor %}
+        {% endif %}    
     </body>
 </html>

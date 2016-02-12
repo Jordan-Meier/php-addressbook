@@ -31,10 +31,10 @@ php -S localhost:8000
 
 ### Technologies Used
 
-PHP
-Silex
-Twig
-Bootstrap v3.3.6
+* PHP
+* Silex
+* Twig
+* Bootstrap v3.3.6
 
 ###Copyright & Licensing
 

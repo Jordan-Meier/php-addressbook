@@ -17,7 +17,7 @@
         return $app['twig']->render('contacts.html.twig', array('contacts' => Contact::getAll()));
     });
 
-    $app->post("/contacts", function() use ($app) {
+    $app->post("/create_contact", function() use ($app) {
         $new_contact = new Contact($_POST['name'], $_POST['photo'], $_POST['phone'], $_POST['address'], $_POST['email']);
         $new_contact->save();
 

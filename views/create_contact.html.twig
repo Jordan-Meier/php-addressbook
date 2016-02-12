@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="../../web/css/styles.css" media="screen">
+        <title>Address Book</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>You created a new contact!</h1>
+            <h3>{{ newContact.getName }}</h3>
+            <img src="{{ newContact.getPhoto}}" alt="contact photo"/>
+            <ul>
+                <li>{{ newContact.getPhone }}</li>
+                <li>{{ newContact.getAddress }}</li>
+                <li>{{ newContact.getEmail }}</li>
+            </ul>
+            <h3><a href="/">View all contacts</a></h3>
+        </div>
+
+
+    </body>
+</html>

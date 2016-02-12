@@ -7,7 +7,7 @@
     </head>
     <body>
         <div class="container-fluid jumbotron">
-            <h1>Your Own. Personal. Address Book.</h1>
+            <h1>Your Own Personal Address Book</h1>
         </div>
         <div class="container">
             <div class="row">
@@ -15,24 +15,24 @@
                 <div class="col-sm-8">
                     <form class="form-group" action="/create_contact" method="post">
                         <label for="name">Contact Name</label>
-                        <input type="text" name="name" id="name"><br><br>
+                        <input class="form-control" type="text" name="name" id="name" placeholder="Bob"><br><br>
 
                         <label for="photo">URL to a Photo of Contact</label>
-                        <input type="text" name="photo" id="photo"><br><br>
+                        <input class="form-control" type="text" name="photo" id="photo" placeholder="http://your_photo.jpg"><br><br>
 
                         <label for="phone">Contact Phone #</label>
-                        <input type="text" name="phone" id="phone"><br><br>
+                        <input class="form-control" type="text" name="phone" id="phone" placeholder="(555) 555-5555"><br><br>
 
                         <label for="address">Contact Address</label>
-                        <input type="text" name="address" id="address" placeholder="123, Main St, Portland OR, 97214"><br><br>
+                        <input class="form-control" type="text" name="address" id="address" placeholder="123, Main St, Portland OR, 97214"><br><br>
 
                         <label for="email">Contact Email</label>
-                        <input type="email" name="email" id="email" placeholder="Email"><br><br>
+                        <input class="form-control" type="email" name="email" id="email" placeholder="bob@bogusEmail.com"><br><br>
 
-                        <button type="submit">Add Contact</button>
+                        <button class="btn" type="submit">Add Contact</button>
                     </form>
                     <form class="form-group" action="/delete_contacts" method="post">
-                        <button type="submit">Delete Contacts</button>
+                        <button class="btn" type="submit">Delete Contacts</button>
                     </form>
                 </div>
             </div>
@@ -44,13 +44,13 @@
                 <div class="col-sm-8">
                     {% if contacts is not empty %}
                         {% for contact in contacts %}
-                            {{ contact.getName }}<br>
+                            <h4>{{ contact.getName }}</h4><br>
                             <img src="{{ contact.getPhoto}}" alt="contact photo"/>
-                            <ul>
-                                <li>{{ contact.getPhone }}</li>
-                                <li>{{ contact.getAddress }}</li>
-                                <li>{{ contact.getEmail }}</li>
-                            </ul>
+                            <p>
+                                <h5>Phone #: {{ contact.getPhone }}</h5>
+                                <h5>Address: {{ contact.getAddress }}</h5>
+                                <h5>Email: {{ contact.getEmail }}</h5>
+                            </p><br><br>
                         {% endfor %}
                     {% endif %}
                 </div>

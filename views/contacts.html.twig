@@ -2,7 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        <link rel="stylesheet" href="../../web/css/styles.css" media="screen">
+        <link rel="stylesheet" href="css/styles.css" media="screen">
         <title>Address Book</title>
     </head>
     <body>
@@ -27,15 +27,17 @@
 
                         <button type="submit">Add Contact</button>
                     </form>
+                    <form class="form-group" action="/delete_contacts" method="post">
+                        <button type="submit">Delete Contacts</button>
+                    </form>
                 </div>
-
             </div>
         </div>
 
         <h1>Here is a list of your existing contacts:</h1>
         {% if contacts is not empty %}
             {% for contact in contacts %}
-                {{ contact.getName }}
+                {{ contact.getName }}<br>
                 <img src="{{ contact.getPhoto}}" alt="contact photo"/>
                 <ul>
                     <li>{{ contact.getPhone }}</li>

@@ -6,9 +6,13 @@
         <title>Address Book</title>
     </head>
     <body>
+        <div class="container-fluid jumbotron">
+            <h1>Your Own. Personal. Address Book.</h1>
+        </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <h3>Fill out the form below to add a contact to your address book:</h3>
+                <div class="col-sm-8">
                     <form class="form-group" action="/create_contact" method="post">
                         <label for="name">Contact Name</label>
                         <input type="text" name="name" id="name"><br><br>
@@ -23,7 +27,7 @@
                         <input type="text" name="address" id="address" placeholder="123, Main St, Portland OR, 97214"><br><br>
 
                         <label for="email">Contact Email</label>
-                        <input type="text" name="email" id="email"><br><br>
+                        <input type="email" name="email" id="email" placeholder="Email"><br><br>
 
                         <button type="submit">Add Contact</button>
                     </form>
@@ -33,18 +37,25 @@
                 </div>
             </div>
         </div>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <h1>Here is a list of your existing contacts:</h1>
+                <div class="col-sm-8">
+                    {% if contacts is not empty %}
+                        {% for contact in contacts %}
+                            {{ contact.getName }}<br>
+                            <img src="{{ contact.getPhoto}}" alt="contact photo"/>
+                            <ul>
+                                <li>{{ contact.getPhone }}</li>
+                                <li>{{ contact.getAddress }}</li>
+                                <li>{{ contact.getEmail }}</li>
+                            </ul>
+                        {% endfor %}
+                    {% endif %}
+                </div>
 
-        <h1>Here is a list of your existing contacts:</h1>
-        {% if contacts is not empty %}
-            {% for contact in contacts %}
-                {{ contact.getName }}<br>
-                <img src="{{ contact.getPhoto}}" alt="contact photo"/>
-                <ul>
-                    <li>{{ contact.getPhone }}</li>
-                    <li>{{ contact.getAddress }}</li>
-                    <li>{{ contact.getEmail }}</li>
-                </ul>
-            {% endfor %}
-        {% endif %}
+            </div>
+        </div>
     </body>
 </html>
